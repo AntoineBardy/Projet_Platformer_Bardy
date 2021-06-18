@@ -12,7 +12,7 @@ export default class SecondWorld extends Phaser.Scene {
 		    this.posY = data.PositionY
 		    this.respawn = data.Respawn
         this.testRespawn = data.testRespawn
-
+        this.blabla = data.Bonjour
 
       }
       
@@ -74,8 +74,6 @@ export default class SecondWorld extends Phaser.Scene {
 
       this.mortel.setCollisionByProperty({ mortal: true });
       this.physics.world.addCollider(this.player.sprite, this.mortel,this.death,null,this)
-  
-      this.sound.play('ambiance', {volume : 0.2, rate : 0.8, mute : true});
 
       //Setting the camera
       this.cameras.main.startFollow(this.player.sprite);
@@ -86,6 +84,7 @@ export default class SecondWorld extends Phaser.Scene {
       if (this.isPlayerDead) return;
   
       this.player.update();
+      this.blabla = false
 
       this.time.addEvent({ delay : 5000, repeat: 9, callback: function(){this.warping(this.player);}, callbackScope: this});
 
@@ -97,7 +96,7 @@ export default class SecondWorld extends Phaser.Scene {
 
     warping(player){
       this.test = true;
-      this.scene.start('game', {PositionX:this.posX , PositionY:this.posY , Respawn:this.respawn, testRespawn:this.test})
+      this.scene.start('game', {PositionX:this.posX , PositionY:this.posY , Respawn:this.respawn, testRespawn:this.test, Bonjour:this.blabla})
     }
 
     death(player){
