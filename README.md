@@ -1,2 +1,2 @@
-# Projet_Platformer_Bardy
+# Platformer_Bardy_Schizophrenia
  Projet de fin d'année

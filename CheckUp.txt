@@ -1,0 +1,7 @@
+Checkpoint = 1 poteau
+Ne reste que la voiture
+1 bonus qui fait passer dans un autre monde sans ennemi et au bout d'un certain temps revenir dans le monde normal ( bonus constant ) = 1 pilule
+
+//
+Timer (double)
+Dialogue
