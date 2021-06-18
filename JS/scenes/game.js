@@ -12,6 +12,7 @@ export default class Game extends Phaser.Scene {
 		  this.posY = data.PositionY
 		  this.respawn = data.Respawn
       this.testRespawn = data.testRespawn
+      this.blabla = data.Bonjour
 
     }
   
@@ -46,6 +47,7 @@ export default class Game extends Phaser.Scene {
       this.posX;
       this.posY;
       this.test = false;
+      
   
   
       //Setting the map
@@ -299,18 +301,28 @@ export default class Game extends Phaser.Scene {
       if (this.isPlayerDead) return;
   
       this.player.update();
+
+      if(this.blabla){
+        this.musique.play({volume : 0.5, rate: 0.6, loop: true})
+        this.blabla = false
+      }
+      else{
+        this.musique.resume()
+      }
   
       this.posX = this.player.sprite.body.x
       this.posY = this.player.sprite.body.y
+
       
-      this.musique.play({volume :0.5, rate: 0.6, loop: true});
+      
       
     }
 
     warping(player){
       this.test = true
+      this.musique.pause()
       //this.player.destroy();
-      this.scene.start('world', {PositionX:this.posX , PositionY:this.posY, Respawn:this.respawn, testRespawn:this.test})
+      this.scene.start('world', {PositionX:this.posX , PositionY:this.posY, Respawn:this.respawn, testRespawn:this.test, Bonjour:this.blabla})
     }
 
     death(player){
