@@ -18,6 +18,7 @@ export default class Menu extends Phaser.Scene {
     create() { //creating the menu screen
 
         this.testRespawn = false;
+        this.blabla = true;
 
         //create images (z order)
 
@@ -92,7 +93,7 @@ export default class Menu extends Phaser.Scene {
         playButton.setInteractive();
 
         playButton.on("pointerup", () => {
-            this.scene.start('game', {testRespawn:this.test});
+            this.scene.start('game', {testRespawn:this.test, Bonjour: this.blabla});
         })
 
         commandButton.setInteractive();
