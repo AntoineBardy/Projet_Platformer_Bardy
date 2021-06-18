@@ -57,10 +57,6 @@ export default class Game extends Phaser.Scene {
       map.createLayer("Decor1", tiles).setDepth(0);
       map.createLayer("Decor2", tiles).setDepth(-1);
       this.mortel = map.createLayer("Mortel", tiles).setDepth(-1);
-
-      //Setting soud design
-
-      this.sound.add('ambiance',{volume :0.5, rate: 0.6, loop: true});
   
       // Using Spawn Point to get an easy way to spawn player
       if(this.testRespawn){
@@ -294,10 +290,10 @@ export default class Game extends Phaser.Scene {
       //Setting the camera
       this.cameras.main.startFollow(this.player.sprite);
       this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
+      this.musique;
+      this.musique = this.sound.add('ambiance');
     }
 
-    this.musique;
-    this.musique = this.sound.add('ambiance');
   
     update(time, delta) {
       if (this.isPlayerDead) return;
@@ -307,7 +303,7 @@ export default class Game extends Phaser.Scene {
       this.posX = this.player.sprite.body.x
       this.posY = this.player.sprite.body.y
       
-      this.musique.play({volume :0.5, rate: 0.6})
+      this.musique.play({volume :0.5, rate: 0.6, loop: true});
       
     }
 
