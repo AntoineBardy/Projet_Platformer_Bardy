@@ -12,7 +12,7 @@ export default class Game extends Phaser.Scene {
 		  this.posY = data.PositionY
 		  this.respawn = data.Respawn
       this.testRespawn = data.testRespawn
-      this.blabla = data.Bonjour
+      this.ambi = data.Zik
 
     }
   
@@ -84,6 +84,7 @@ export default class Game extends Phaser.Scene {
       });
 
     this.CheckPoint = map.findObject("Objects", obj => obj.name === "CheckPoint")
+    
 
     this.checkpoint = this.physics.add.group({allowGravity: false,immovable: true})
     this.checkpoint.create(this.CheckPoint.x, this.CheckPoint.y, 'Checkpoint').setDepth(0);
@@ -116,8 +117,8 @@ export default class Game extends Phaser.Scene {
     this.corbeauI = this.corbeau.create(oisalI.x + 140, oisalI.y, 'Croa').setDepth(0).setSize(64, 64);
     this.corbeauII = this.corbeau.create(oisalII.x + 140 , oisalII.y - 40, 'Croa').setDepth(0).setSize(64, 64);
     this.corbeauIII = this.corbeauA.create(oisalIII.x - 190, oisalIII.y - 40 , 'Croa').setDepth(0).setSize(64, 64);
-    this.corbeauIV = this.corbeau.create(oisalIV.x + 340, oisalIV.y - 40 , 'Croa').setDepth(0).setSize(64, 64);
-    this.corbeauV = this.corbeau.create(oisalV.x , oisalV.y , 'Croa').setDepth(0).setSize(64, 64);
+    this.corbeauIV = this.corbeau.create(oisalIV.x + 340, oisalIV.y - 20 , 'Croa').setDepth(0).setSize(64, 64);
+    this.corbeauV = this.corbeauA.create(oisalV.x , oisalV.y , 'Croa').setDepth(0).setSize(64, 64);
 
     this.corbeauIII.flipX = true;
     this.corbeauV.flipX = true;
@@ -302,9 +303,9 @@ export default class Game extends Phaser.Scene {
   
       this.player.update();
 
-      if(this.blabla){
-        this.musique.play({volume : 0.5, rate: 0.6, loop: true})
-        this.blabla = false
+      if(this.ambi){
+        this.musique.play({volume : 0.3, rate: 0.8, loop: true})
+        this.ambi = false
       }
       else{
         this.musique.resume()
@@ -322,7 +323,7 @@ export default class Game extends Phaser.Scene {
       this.test = true
       this.musique.pause()
       //this.player.destroy();
-      this.scene.start('world', {PositionX:this.posX , PositionY:this.posY, Respawn:this.respawn, testRespawn:this.test, Bonjour:this.blabla})
+      this.scene.start('world', {PositionX:this.posX , PositionY:this.posY, Respawn:this.respawn, testRespawn:this.test, Zik:this.ambi})
     }
 
     death(player){

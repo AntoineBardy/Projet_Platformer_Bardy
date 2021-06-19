@@ -1,6 +1,7 @@
 import Menu from "./scenes/menu.js";
 import Game from "./scenes/game.js";
-import SecondWorld from "./scenes/2ndWorld.js"
+import SecondWorld from "./scenes/2ndWorld.js";
+import Touches from "./scenes/Touches.js"
 
 
 const config = {
@@ -10,7 +11,7 @@ const config = {
   parent: "container",
   pixelArt: true,
   backgroundColor: "#1d212d",
-  scene: [Menu, Game, SecondWorld],
+  scene: [Menu, Game, SecondWorld, Touches],
   physics: {
     default: "arcade",
     arcade: {

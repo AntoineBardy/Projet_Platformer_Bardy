@@ -12,7 +12,7 @@ export default class SecondWorld extends Phaser.Scene {
 		    this.posY = data.PositionY
 		    this.respawn = data.Respawn
         this.testRespawn = data.testRespawn
-        this.blabla = data.Bonjour
+        this.ambi = data.Zik
 
       }
       
@@ -84,7 +84,7 @@ export default class SecondWorld extends Phaser.Scene {
       if (this.isPlayerDead) return;
   
       this.player.update();
-      this.blabla = false
+      this.ambi = false
 
       this.time.addEvent({ delay : 5000, repeat: 9, callback: function(){this.warping(this.player);}, callbackScope: this});
 
@@ -96,7 +96,7 @@ export default class SecondWorld extends Phaser.Scene {
 
     warping(player){
       this.test = true;
-      this.scene.start('game', {PositionX:this.posX , PositionY:this.posY , Respawn:this.respawn, testRespawn:this.test, Bonjour:this.blabla})
+      this.scene.start('game', {PositionX:this.posX , PositionY:this.posY , Respawn:this.respawn, testRespawn:this.test, Zik:this.ambi})
     }
 
     death(player){

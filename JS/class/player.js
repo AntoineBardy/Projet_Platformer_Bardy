@@ -67,7 +67,7 @@ export default class Player {
       } else {
         //Stopping Animation to play a Texture for the jump
         sprite.anims.stop();
-        sprite.setTexture("player", 5);
+        sprite.setTexture("player", 4);
       }
     }
   

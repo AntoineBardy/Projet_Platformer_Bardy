@@ -18,7 +18,7 @@ export default class Menu extends Phaser.Scene {
     create() { //creating the menu screen
 
         this.testRespawn = false;
-        this.blabla = true;
+        this.ambi = true;
 
         //create images (z order)
 
@@ -28,7 +28,7 @@ export default class Menu extends Phaser.Scene {
 
         let playButton = this.add.image(this.game.renderer.width / 2 - 15 , this.game.renderer.height / 2 + 10, 'playbutton').setDepth(1);
 
-        let commandButton = this.add.image(this.game.renderer.width / 2 , this.game.renderer.height / 2 + 97, 'commandesbutton').setDepth(1);
+        let commandButton = this.add.image(this.game.renderer.width / 2 + 10 , this.game.renderer.height / 2 + 97, 'commandesbutton').setDepth(1);
 
         let exitButton = this.add.image(this.game.renderer.width / 2 - 15 , this.game.renderer.height / 2 + 177, 'exit').setDepth(1);
 
@@ -93,13 +93,13 @@ export default class Menu extends Phaser.Scene {
         playButton.setInteractive();
 
         playButton.on("pointerup", () => {
-            this.scene.start('game', {testRespawn:this.test, Bonjour: this.blabla});
+            this.scene.start('game', {testRespawn:this.test, Zik: this.ambi});
         })
 
         commandButton.setInteractive();
 
         commandButton.on("pointerup", () => {
-            //UNTRUC
+            this.scene.start('touches');
             
         })
 

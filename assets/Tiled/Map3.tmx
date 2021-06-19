@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.4" tiledversion="1.4.2" orientation="orthogonal" renderorder="right-down" width="300" height="60" tilewidth="32" tileheight="32" infinite="0" nextlayerid="7" nextobjectid="26">
+<map version="1.5" tiledversion="1.6.0" orientation="orthogonal" renderorder="right-down" width="300" height="60" tilewidth="32" tileheight="32" infinite="0" nextlayerid="7" nextobjectid="26">
  <editorsettings>
   <export target="Map3.json" format="json"/>
  </editorsettings>
@@ -1074,7 +1074,7 @@
   <object id="3" name="Power-Up 1" x="589" y="1821">
    <point/>
   </object>
-  <object id="5" name="CheckPoint" x="2144" y="1819">
+  <object id="5" name="CheckPoint" x="2144.5" y="1784.5">
    <point/>
   </object>
   <object id="6" name="Power-Up 2" x="3809" y="863">
@@ -1083,7 +1083,7 @@
   <object id="7" name="Power-Up 3" x="6272" y="1822">
    <point/>
   </object>
-  <object id="8" name="CheckPoint 2" x="5535" y="1822">
+  <object id="8" name="CheckPoint 2" x="5536" y="1776">
    <point/>
   </object>
  </objectgroup>
@@ -1103,13 +1103,13 @@
   <object id="15" name="Monstre 3" x="1982.67" y="1200">
    <point/>
   </object>
-  <object id="16" name="Monstre 5" x="3085.33" y="989.333">
+  <object id="16" name="Monstre 5" x="3023" y="992.666">
    <point/>
   </object>
-  <object id="17" name="Monstre 4" x="2461" y="1093">
+  <object id="17" name="Monstre 4" x="2163" y="1376">
    <point/>
   </object>
-  <object id="18" name="Monstre 7" x="5300" y="1386.67">
+  <object id="18" name="Monstre 7" x="5301" y="1358.17">
    <point/>
   </object>
   <object id="19" name="BDF 4" x="4970" y="1860">
@@ -1124,13 +1124,13 @@
   <object id="22" name="Monstre 8" x="8092" y="1817">
    <point/>
   </object>
-  <object id="23" name="Monstre 6" x="4444" y="982">
+  <object id="23" name="Monstre 6" x="4545" y="960">
    <point/>
   </object>
-  <object id="24" name="VOITURE" x="8908" y="1816">
+  <object id="24" name="VOITURE" x="8895.5" y="1813.5">
    <point/>
   </object>
-  <object id="25" name="Monstre 9" x="8516" y="1806">
+  <object id="25" name="Monstre 9" x="8255" y="1814">
    <point/>
   </object>
  </objectgroup>
