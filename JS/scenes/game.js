@@ -35,7 +35,11 @@ export default class Game extends Phaser.Scene {
       this.load.image("tile", "./assets/Tiled/TilesSet.png");
       this.load.tilemapTiledJSON("map", "./assets/Tiled/Map3.json");
       this.load.image("background", "./assets/Assets/Background2.png");
+      this.load.image("Clouds1", "./assets/Assets/nuages1OW.png")
+      this.load.image("Clouds2", "./assets/Assets/nuages2OW.png")
+      this.load.image("Clouds3", "./assets/Assets/nuages3OW.png")
       this.load.audio('ambiance', "./Sound/SonSchizo.ogg");
+      this.load.image("voiturette", "./assets/Assets/monstreVoiture.png")
     }
   
     create() {
@@ -59,6 +63,16 @@ export default class Game extends Phaser.Scene {
       map.createLayer("Decor1", tiles).setDepth(0);
       map.createLayer("Decor2", tiles).setDepth(-1);
       this.mortel = map.createLayer("Mortel", tiles).setDepth(-1);
+
+      this.end = this.physics.add.group({allowGravity: false,immovable: true})
+
+      this.end.create(9472, 1760, 'Finish').setDepth(0).setVisible(true);
+
+      //Parallaxe
+
+      this.add.image(0, 0, "Clouds1").setScrollFactor(0.2).setDepth(-2)
+      this.add.image(0, 0, "Clouds2").setScrollFactor(0.4).setDepth(-2)
+      this.add.image(0, 0, "Clouds3").setScrollFactor(0.6).setDepth(-2)
   
       // Using Spawn Point to get an easy way to spawn player
       if(this.testRespawn){
@@ -295,6 +309,21 @@ export default class Game extends Phaser.Scene {
       this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
       this.musique;
       this.musique = this.sound.add('ambiance');
+
+      this.physics.add.overlap(this.player.sprite, this.end, this.finishing, null,this);
+
+      this.voiture = this.physics.add.group({allowGravity: false,immovable: true})
+      this.VSp = map.findObject("Monstres", obj => obj.name === "VOITURE")
+      this.voiture.create(this.VSp.x, this.VSp.y, 'voiturette').setDepth(0).setVisible(true);
+      this.timer = this.time.addEvent({ delay: 2000,repeat:-1 ,callback: function(){
+        this.voiture.setVisible(true)
+        if (this.physics.world.overlap(this.player.sprite, this.voiture)){
+          this.death(this.player)
+        }
+        this.time.addEvent({ delay: 1000,callback: function(){this.voiture.setVisible(false)}, callbackScope: this});
+
+    }, callbackScope: this})
+
     }
 
   
@@ -357,5 +386,9 @@ export default class Game extends Phaser.Scene {
     }
     respawning(player){
       this.respawn = true
+    }
+
+    finishing(player){
+      this.scene.start('fin');
     }
   }

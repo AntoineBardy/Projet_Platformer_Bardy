@@ -30,6 +30,7 @@ export default class SecondWorld extends Phaser.Scene {
         }
       );
       this.load.image("tiles", "./assets/Tiled/TilesSet.png");
+      this.load.image("Finish", "./assets/Assets/ArriveeMaison1.png");
       this.load.tilemapTiledJSON("map2", "./assets/Tiled/Map4.json");
       this.load.image("background2", "./assets/Assets/Background1.png");
       
@@ -51,6 +52,10 @@ export default class SecondWorld extends Phaser.Scene {
       map.createLayer("Decor1", tiles).setDepth(-1);
       map.createLayer("Decor2", tiles).setDepth(-2);
       this.mortel = map.createLayer("Mortel", tiles).setDepth(-2);
+
+      this.end = this.physics.add.group({allowGravity: false,immovable: true})
+
+      this.end.create(9472, 1760, 'Finish').setDepth(0).setVisible(true);
 
       //Setting soud design
 
@@ -78,6 +83,8 @@ export default class SecondWorld extends Phaser.Scene {
       //Setting the camera
       this.cameras.main.startFollow(this.player.sprite);
       this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
+
+      this.physics.add.overlap(this.player.sprite, this.end, this.finishing, null,this);
     }
   
     update(time, delta) {
@@ -130,5 +137,9 @@ export default class SecondWorld extends Phaser.Scene {
 
     respawning(player){
       this.respawn = true
+    }
+
+    finishing(player){
+      this.scene.start('fin');
     }
   }

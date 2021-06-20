@@ -1068,7 +1068,7 @@
 </data>
  </layer>
  <objectgroup id="5" name="Objects">
-  <object id="1" name="Spawn Point" x="63" y="1821">
+  <object id="1" name="Spawn Point" x="95.6667" y="1809">
    <point/>
   </object>
   <object id="3" name="Power-Up 1" x="589" y="1821">
@@ -1121,16 +1121,16 @@
   <object id="21" name="BDF 5" x="7236.36" y="1848.48">
    <point/>
   </object>
-  <object id="22" name="Monstre 8" x="8092" y="1817">
+  <object id="22" name="Monstre 8" x="8031" y="1813">
    <point/>
   </object>
   <object id="23" name="Monstre 6" x="4545" y="960">
    <point/>
   </object>
-  <object id="24" name="VOITURE" x="8895.5" y="1813.5">
+  <object id="24" name="VOITURE" x="8895.5" y="1800.5">
    <point/>
   </object>
-  <object id="25" name="Monstre 9" x="8255" y="1814">
+  <object id="25" name="Monstre 9" x="8205" y="1815">
    <point/>
   </object>
  </objectgroup>
